@@ -1,0 +1,49 @@
+{
+    "data_params": {
+        "train_index": "/home/deeplearning/UltrasoundData/train_index.txt",
+        "valid_index": "/home/deeplearning/UltrasoundData/valid_index.txt",
+        "predict_index": "/home/deeplearning/UltrasoundData/predict_index.txt",
+        "batch_size": 1
+    },
+    "network_params": {
+        "name": "ComplexConvGRU",
+        "input_size": 1,
+        "seq_len": 25,
+        "num_cells": 3,
+        "cells_hidden": [
+            16,
+            8,
+            1
+        ],
+        "cells_kernel": [
+            3,
+            3,
+            3
+        ],
+        "cells_padding": [
+            1,
+            1,
+            1
+        ],
+        "cells_stride": [
+            1,
+            1,
+            1
+        ],
+        "dropout_rate": 0.1
+    },
+    "log_params": {
+        "log_root": "logs"
+    },
+    "train_params": {
+        "learning_rate": 0.001,
+        "loss": "MSE",
+        "optimizer": "Adam",
+        "epoch": 500,
+        "show_steps": 20,
+        "save_mode": "min",
+        "early_stop_epoch": 10,
+        "adjust_lr_epoch": 10,
+        "lr_decay": 0.9
+    }
+}
